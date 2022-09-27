@@ -16,7 +16,7 @@ export default defineType({
             name: 'breed',
             title: 'Breed',
             options: {
-                list: ['Chihuahua']
+                list: ['chihuahua']
             }
         }),
         defineField({
