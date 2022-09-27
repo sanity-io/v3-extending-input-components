@@ -22,7 +22,6 @@ export function renderTextStats(props: InputProps, next: RenderInputCallback) {
         ["string", "text"].includes(props.schemaType.name)
         && props.schemaType.options?.charCount
     ) {
-        console.log(props)
         return <TextStats value={props.value as string}>{next(props)}</TextStats>
     }
 
