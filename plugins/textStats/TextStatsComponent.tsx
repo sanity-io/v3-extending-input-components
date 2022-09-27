@@ -1,5 +1,5 @@
 import { InputProps, RenderInputCallback } from "sanity";
-import { Stack, Text, Card } from '@sanity/ui'
+import { Stack, Text } from '@sanity/ui'
 
 interface TextStatsProps {
     children?: React.ReactNode,
