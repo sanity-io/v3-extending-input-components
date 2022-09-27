@@ -1,5 +1,6 @@
 import {createConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
+import textStats from './plugins/textStats'
 import {schemaTypes} from './schemas'
 
 export default createConfig({
@@ -9,7 +10,7 @@ export default createConfig({
   projectId: 'twn309ie',
   dataset: 'production',
 
-  plugins: [deskTool()],
+  plugins: [deskTool(), textStats()],
 
   schema: {
     types: schemaTypes,
