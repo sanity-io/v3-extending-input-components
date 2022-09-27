@@ -18,7 +18,11 @@ export function TextStats({ children, value }: TextStatsProps) {
 }
 
 export function renderTextStats(props: InputProps, next: RenderInputCallback) {
-    if (["string", "text"].includes(props.schemaType.name)) {
+    if (
+        ["string", "text"].includes(props.schemaType.name)
+        && props.schemaType.options?.charCount
+    ) {
+        console.log(props)
         return <TextStats value={props.value as string}>{next(props)}</TextStats>
     }
 

@@ -18,18 +18,27 @@ export default defineType({
             title: 'Breed',
             components: {
                 input: PetBreedInput
+            },
+            options: {
+                charCount: true,
             }
         }),
         defineField({
             type: 'string',
             name: 'slogan',
             title: 'Slogan',
-            validation: (rule) => rule.required()
+            validation: (rule) => rule.required(),
+            options: {
+                charCount: true,
+            }
         }),
         defineField({
             type: 'text',
             name: 'introduction',
             title: 'Introduction',
+            options: {
+                charCount: true,
+            }
         }),
         defineField({
             type: 'array',
