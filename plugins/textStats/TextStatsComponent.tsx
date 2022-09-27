@@ -19,5 +19,9 @@ export function TextStats({ children, id }: TextStatsProps) {
 }
 
 export function renderTextStats(props: InputProps, next: RenderInputCallback) {
-    return <TextStats id={props.id}>{next(props)}</TextStats>
+    if (["string", "text"].includes(props.schemaType.name)){
+        return <TextStats id={props.id}>{next(props)}</TextStats>
+    }
+
+    return next(props)
 }
