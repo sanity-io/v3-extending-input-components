@@ -3,24 +3,23 @@ import { Stack, Text, Card } from '@sanity/ui'
 
 interface TextStatsProps {
     children?: React.ReactNode,
-    id: string,
+    value?: string,
 }
 
-export function TextStats({ children, id }: TextStatsProps) {
+export function TextStats({ children, value }: TextStatsProps) {
+    const length = (value && value.length) || 0
     return (
-        <Card shadow={1} padding={1}>
-            <Stack space={2}>
-                <Text>Wrapper ({id})</Text>
-                {children}
-            </Stack>
-        </Card>
+        <Stack space={2}>
+            {children}
+            <Text size={1} muted>{length} characters</Text>
+        </Stack>
     )
 
 }
 
 export function renderTextStats(props: InputProps, next: RenderInputCallback) {
-    if (["string", "text"].includes(props.schemaType.name)){
-        return <TextStats id={props.id}>{next(props)}</TextStats>
+    if (["string", "text"].includes(props.schemaType.name)) {
+        return <TextStats value={props.value as string}>{next(props)}</TextStats>
     }
 
     return next(props)
