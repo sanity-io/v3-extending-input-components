@@ -46,7 +46,10 @@ export default defineType({
             title: 'Biography',
             of: [
                 {type: 'block'}
-            ]
+            ],
+            options: {
+                charCount: true,
+            }
         })
     ]
 })
