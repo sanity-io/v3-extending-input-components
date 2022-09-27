@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { PetBreedInput } from "../components/PetBreedInput";
 
 export default defineType({
     type: 'document',
@@ -15,8 +16,8 @@ export default defineType({
             type: 'string',
             name: 'breed',
             title: 'Breed',
-            options: {
-                list: ['Chihuahua']
+            components: {
+                input: PetBreedInput
             }
         }),
         defineField({
