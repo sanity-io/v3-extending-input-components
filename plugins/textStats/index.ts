@@ -7,3 +7,5 @@ export default createPlugin({
         renderInput: renderTextStats,
     }
 })
+
+export type CharCountEnabled = true;
